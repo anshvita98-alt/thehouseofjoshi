@@ -1,13 +1,14 @@
 {
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
+    "publicPath": "/dist/client",
     "rewrites": [
         {
             "source": "/assets/:path*",
-            "destination": "/assets/:path*"
+            "destination": "/client/assets/:path*"
         },
         {
-            "source": "/:path*",
+            "source": "/(.*)",
             "destination": "/api"
         }
     ]
