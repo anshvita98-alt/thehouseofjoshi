@@ -11,9 +11,4 @@ export default defineConfig({
     nitro: true,
     server: { entry: "server" },
   },
-  vite: {
-    ssr: {
-      external: ["react", "react-dom", "@tanstack/react-router"],
-    },
-  },
 });
