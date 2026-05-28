@@ -1,11 +1,5 @@
 {
     "buildCommand": "npm run build",
     "outputDirectory": "dist",
-    "framework": "tanstack-start",
-    "rewrites": [
-        {
-            "source": "/:path((?!api).*)*",
-            "destination": "/api"
-        }
-    ]
+    "framework": "tanstack-start"
 }
