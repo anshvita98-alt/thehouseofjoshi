@@ -32,13 +32,13 @@ export function PageHero({ eyebrow, title, subtitle, children }: { eyebrow?: str
   );
 }
 
-export function GoldButton({ href, to, children, external, onClick, variant = "solid" }:
-  { href?: string; to?: string; children: ReactNode; external?: boolean; onClick?: () => void; variant?: "solid" | "outline" }) {
+export function GoldButton({ href, to, children, external, onClick, variant = "solid", target, rel }:
+  { href?: string; to?: string; children: ReactNode; external?: boolean; onClick?: () => void; variant?: "solid" | "outline"; target?: string; rel?: string }) {
   const cls = variant === "solid"
     ? "bg-gradient-to-r from-[#FFD76A] via-[#D4AF37] to-[#FFD76A] text-black hover:shadow-[0_0_40px_rgba(255,215,106,0.45)]"
     : "border border-primary/70 text-primary hover:bg-primary/10 hover:gold-glow";
   const base = `inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm tracking-wider font-medium transition-all duration-300 ${cls}`;
-  if (href) return <a href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer noopener" : undefined} className={base}>{children}</a>;
+  if (href) return <a href={href} target={target || (external ? "_blank" : undefined)} rel={rel || (external ? "noreferrer noopener" : undefined)} className={base}>{children}</a>;
   if (onClick) return <button onClick={onClick} className={base}>{children}</button>;
   return <a href={to} className={base}>{children}</a>;
 }
