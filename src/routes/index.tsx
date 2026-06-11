@@ -27,7 +27,7 @@ const CHAINS = [
 const ECOSYSTEM = [
   { icon: Sparkles, name: "NFT Launchpad", to: "/nft-launchpad", desc: "Launch and mint sovereign collections through the official portal." },
   { icon: Layers, name: "Swap", to: "/swap", desc: "Multichain token swapping powered by the Joshi ecosystem." },
-  { icon: Vault, name: "Legacy Vault", to: "/legacy-vault", desc: "Preserve heritage NFTs in a vault built for permanence." },
+  { icon: Vault, name: "Legacy Vault", to: "https://www.legacyvault.thehouseofjoshi.com/", external: true, desc: "Preserve heritage NFTs in a vault built for permanence." },
   { icon: Palette, name: "Dreamweaver", to: "/dreamweaver", desc: "Mint dreams as NFTs in a cinematic creative atmosphere." },
   { icon: Crown, name: "Treasury", to: "/treasury", desc: "Sovereign governance and on-chain treasury operations." },
   { icon: Baby, name: "Kids", to: "/kids", desc: "A safe educational realm to learn Web3 from the ground up." },
@@ -125,20 +125,37 @@ function Home() {
         subtitle="Every pillar of the Joshi protocol — designed with luxury, built for permanence.">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {ECOSYSTEM.map((e, i) => (
-            <Link key={e.name} to={e.to} className="group relative glass rounded-2xl p-7 transition-all duration-500 hover:-translate-y-1.5 hover:gold-glow-strong"
-              style={{ animationDelay: `${i * 60}ms` }}>
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition" style={{
-                background: "radial-gradient(400px 200px at 50% 0%, rgba(212,175,55,0.12), transparent)"
-              }} />
-              <div className="relative">
-                <div className="h-12 w-12 rounded-xl flex items-center justify-center bg-primary/10 border border-primary/30 mb-5">
-                  <e.icon size={20} className="text-primary" />
+            e.external ? (
+              <a key={e.name} href={e.to} target="_blank" rel="noopener noreferrer" className="group relative glass rounded-2xl p-7 transition-all duration-500 hover:-translate-y-1.5 hover:gold-glow-strong"
+                style={{ animationDelay: `${i * 60}ms` }}>
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition" style={{
+                  background: "radial-gradient(400px 200px at 50% 0%, rgba(212,175,55,0.12), transparent)"
+                }} />
+                <div className="relative">
+                  <div className="h-12 w-12 rounded-xl flex items-center justify-center bg-primary/10 border border-primary/30 mb-5">
+                    <e.icon size={20} className="text-primary" />
+                  </div>
+                  <h3 className="font-display text-2xl mb-2">{e.name}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{e.desc}</p>
+                  <div className="mt-5 text-xs tracking-widest text-primary flex items-center gap-2 opacity-70 group-hover:opacity-100 transition">ENTER <ArrowRight size={12} /></div>
                 </div>
-                <h3 className="font-display text-2xl mb-2">{e.name}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{e.desc}</p>
-                <div className="mt-5 text-xs tracking-widest text-primary flex items-center gap-2 opacity-70 group-hover:opacity-100 transition">ENTER <ArrowRight size={12} /></div>
-              </div>
-            </Link>
+              </a>
+            ) : (
+              <Link key={e.name} to={e.to} className="group relative glass rounded-2xl p-7 transition-all duration-500 hover:-translate-y-1.5 hover:gold-glow-strong"
+                style={{ animationDelay: `${i * 60}ms` }}>
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition" style={{
+                  background: "radial-gradient(400px 200px at 50% 0%, rgba(212,175,55,0.12), transparent)"
+                }} />
+                <div className="relative">
+                  <div className="h-12 w-12 rounded-xl flex items-center justify-center bg-primary/10 border border-primary/30 mb-5">
+                    <e.icon size={20} className="text-primary" />
+                  </div>
+                  <h3 className="font-display text-2xl mb-2">{e.name}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{e.desc}</p>
+                  <div className="mt-5 text-xs tracking-widest text-primary flex items-center gap-2 opacity-70 group-hover:opacity-100 transition">ENTER <ArrowRight size={12} /></div>
+                </div>
+              </Link>
+            )
           ))}
         </div>
       </Section>
