@@ -12,7 +12,7 @@ function LegacyVault() {
     <>
       <PageHero eyebrow="THE ARCHIVE" title={<>Legacy <span className="gold-text">Vault</span></>}
         subtitle="Preserve what matters forever.">
-        <GoldButton href="https://www.legacyvault.thehouseofjoshi.com/" external>Open Legacy Vault ↗</GoldButton>
+        <GoldButton href="https://legacyvault.thehouseofjoshi.com/" external>Open Legacy Vault ↗</GoldButton>
       </PageHero>
 
       <section className="relative">
@@ -34,7 +34,7 @@ function LegacyVault() {
             Store your heritage NFTs in a beautifully designed vault built for trust, permanence and future generations. Anchored on-chain, mirrored across decentralized storage, and protected by sovereign keys.
           </p>
           <div className="mt-8">
-            <GoldButton href="https://www.legacyvault.thehouseofjoshi.com/" external>Enter the Vault ↗</GoldButton>
+            <GoldButton href="https://legacyvault.thehouseofjoshi.com/" external>Enter the Vault ↗</GoldButton>
           </div>
         </div>
       </Section>
