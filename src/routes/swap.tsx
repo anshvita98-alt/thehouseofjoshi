@@ -20,24 +20,28 @@ function Swap() {
           <div className="relative glass-strong rounded-3xl p-10 overflow-hidden">
             <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full" style={{ background: "radial-gradient(circle, rgba(255,215,106,0.35), transparent 70%)" }} />
             <div className="relative">
-              <div className="text-[11px] tracking-[0.3em] text-primary mb-4">SWAP PREVIEW</div>
-              <div className="space-y-4">
-                <div className="rounded-2xl bg-black/40 border border-primary/20 p-5">
-                  <div className="text-xs text-muted-foreground">You pay</div>
-                  <div className="mt-2 flex items-center justify-between">
-                    <div className="font-display text-3xl">1.00</div>
-                    <div className="rounded-full border border-primary/40 px-3 py-1 text-xs">ETH on Base</div>
+              <div className="text-[11px] tracking-[0.3em] text-primary mb-4">JOSHI SWAP</div>
+              <div className="space-y-6">
+                <div>
+                  <div className="font-display text-3xl leading-snug">Trade tokens across chains — from one sovereign portal.</div>
+                  <div className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                    Connect your wallet and swap instantly. Best-execution routing finds you the sharpest rate across leading DEX aggregators — no intermediaries, no custody.
                   </div>
                 </div>
-                <div className="flex justify-center"><div className="h-10 w-10 rounded-full border border-primary/40 flex items-center justify-center text-primary">↓</div></div>
-                <div className="rounded-2xl bg-black/40 border border-primary/20 p-5">
-                  <div className="text-xs text-muted-foreground">You receive</div>
-                  <div className="mt-2 flex items-center justify-between">
-                    <div className="font-display text-3xl gold-text">≈ 2,431.20</div>
-                    <div className="rounded-full border border-primary/40 px-3 py-1 text-xs">USDC on Base</div>
-                  </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { label: "Chains supported", value: "5+" },
+                    { label: "Custody model", value: "Self" },
+                    { label: "Routing", value: "Best-rate" },
+                    { label: "Wallet required", value: "Yes" },
+                  ].map(s => (
+                    <div key={s.label} className="rounded-xl bg-black/40 border border-primary/20 p-4">
+                      <div className="text-xs text-muted-foreground">{s.label}</div>
+                      <div className="mt-1 font-display text-lg gold-text">{s.value}</div>
+                    </div>
+                  ))}
                 </div>
-                <GoldButton href="https://swap.thehouseofjoshi.com/" external>Continue on Joshi Swap ↗</GoldButton>
+                <GoldButton href="https://swap.thehouseofjoshi.com/" external>Open Joshi Swap ↗</GoldButton>
               </div>
             </div>
           </div>
