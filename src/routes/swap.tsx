@@ -22,6 +22,7 @@ function Swap() {
             <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full" style={{ background: "radial-gradient(circle, rgba(255,215,106,0.35), transparent 70%)" }} />
             <div className="relative">
               <div className="text-[11px] tracking-[0.3em] text-primary mb-4">🏆 JOSHI SWAP UPDATED 🏆</div>
+              
               <div className="space-y-6">
                 <div>
                   <div className="font-display text-3xl leading-snug">Trade tokens across chains — from one sovereign portal.</div>
