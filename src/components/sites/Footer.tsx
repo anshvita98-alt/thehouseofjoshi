@@ -41,7 +41,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 mt-14">
         <div className="gold-divider mb-6" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <div>© House of Joshi. All rights reserved.</div>
+          <div>© The House of Joshi. All rights reserved.</div>
           <div className="flex gap-5">
             <Link to="/terms" className="hover:text-primary">Terms & Conditions</Link>
             <Link to="/privacy" className="hover:text-primary">Privacy Policy</Link>
