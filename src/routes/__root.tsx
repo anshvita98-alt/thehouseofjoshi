@@ -1,6 +1,13 @@
 import { useState, useCallback } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Outlet, Link, createRootRouteWithContext, useRouter, HeadContent, Scripts } from "@tanstack/react-router";
+import {
+  Outlet,
+  Link,
+  createRootRouteWithContext,
+  useRouter,
+  HeadContent,
+  Scripts,
+} from "@tanstack/react-router";
 import { Navbar } from "@/components/sites/Navbar";
 import { Footer } from "@/components/sites/Footer";
 import { WalletProvider } from "@/components/sites/WalletProvider";
