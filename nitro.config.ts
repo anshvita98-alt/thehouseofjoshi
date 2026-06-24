@@ -5,4 +5,5 @@ export default defineNitroConfig({
   routeRules: {
     "/**": { cache: false },
   },
+  buildDir: ".nitro",
 });

@@ -18,5 +18,10 @@ export default defineConfig({
         "thehouseofjoshi.vercel.app",
       ],
     },
+    build: {
+      assetsInlineLimit: 4096,
+      chunkSizeWarningLimit: 1000,
+    },
+    assetsInclude: ['**/*.mov'],
   },
 });
