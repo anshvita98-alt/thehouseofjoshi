@@ -17,11 +17,17 @@ export const Route = createFileRoute("/")({
 
 const CHAINS = [
   { name: "Ethereum", color: "#627EEA", logo: "https://cryptologos.cc/logos/ethereum-eth-logo.png" },
-  { name: "Base", color: "#0052FF", logo: baseLogo },
-  { name: "Cronos", color: "#002D74", logo: "https://cryptologos.cc/logos/cronos-cro-logo.png" },
+  { name: "USDC", color: "#2775CA", logo: "https://cryptologos.cc/logos/usd-coin-usdc-logo.png" },
+  { name: "USDT", color: "#26A17B", logo: "https://cryptologos.cc/logos/tether-usdt-logo.png" },
   { name: "Shibarium", color: "#FF7A1A", logo: "https://cryptologos.cc/logos/shiba-inu-shib-logo.png" },
+  { name: "Bone", color: "#F6A429", logo: "https://s2.coinmarketcap.com/static/img/coins/64x64/19911.png" },
+  { name: "Treat146b", color: "#FF4D4D", logo: "https://s2.coinmarketcap.com/static/img/coins/64x64/29419.png" },
+  { name: "Cronos", color: "#002D74", logo: "https://cryptologos.cc/logos/cronos-cro-logo.png" },
   { name: "XRP", color: "#23292F", logo: "https://cryptologos.cc/logos/xrp-xrp-logo.png" },
-  { name: "USDC on Base", color: "#2775CA", logo: "https://cryptologos.cc/logos/usd-coin-usdc-logo.png" },
+  { name: "SHIB — SchismaticShib", color: "#FF7A1A", logo: "https://cryptologos.cc/logos/shiba-inu-shib-logo.png" },
+  { name: "Base", color: "#0052FF", logo: baseLogo },
+  { name: "Oscar", color: "#FF6B35", logo: "https://s2.coinmarketcap.com/static/img/coins/64x64/29418.png" },
+  { name: "BNB", color: "#F3BA2F", logo: "https://cryptologos.cc/logos/bnb-bnb-logo.png" },
 ];
 
 const ECOSYSTEM = [

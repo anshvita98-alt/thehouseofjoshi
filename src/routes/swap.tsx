@@ -25,12 +25,12 @@ function Swap() {
                 <div>
                   <div className="font-display text-3xl leading-snug">Trade tokens across chains — from one sovereign portal.</div>
                   <div className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    Connect your wallet and swap instantly. Best-execution routing finds you the sharpest rate across leading DEX aggregators — no intermediaries, no custody.
+                    Connect your wallet and swap instantly. Supports Ethereum, USDC, USDT, Shibarium, Bone, Treat146b, Cronos, XRP, SHIB — SchismaticShib, Base, Oscar and BNB. Best-execution routing finds you the sharpest rate across leading DEX aggregators — no intermediaries, no custody.
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    { label: "Chains supported", value: "5+" },
+                    { label: "Chains supported", value: "12+" },
                     { label: "Custody model", value: "Self" },
                     { label: "Routing", value: "Best-rate" },
                     { label: "Wallet required", value: "Yes" },
@@ -48,7 +48,7 @@ function Swap() {
 
           <div className="space-y-5">
             {[
-              { icon: Layers, t: "Multichain by design", d: "Trade across Ethereum, Base, Cronos, Shibarium and XRP from one sovereign portal." },
+              { icon: Layers, t: "Multichain by design", d: "Trade across Ethereum, USDC, USDT, Shibarium, Bone, Treat146b, Cronos, XRP, SHIB — SchismaticShib, Base, Oscar and BNB from one sovereign portal." },
               { icon: Shield, t: "Self-custody first", d: "Connect your own wallet. The Joshi protocol never holds your assets." },
               { icon: Zap, t: "Optimized routing", d: "Best-execution routing across the leading DEX aggregators." },
             ].map(f => (
