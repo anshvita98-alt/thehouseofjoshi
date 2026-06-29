@@ -33,7 +33,7 @@ export function Footer() {
         <FooterCol title="Community" links={[]} external={[
           ["X (Twitter)","https://x.com/thehouseofjoshi"],
           ["Discord","https://discord.com/invite/uH9zVeAwDu"],
-          ["Instagram","https://www.instagram.com/thehouseofjoshi/"],
+          ["Instagram","https://www.instagram.com/thehouseofjoshi_"],
           ["Email","mailto:support@thehouseofjoshi.com"],
         ]} />
       </div>
@@ -41,7 +41,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 mt-14">
         <div className="gold-divider mb-6" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <div>© The House of Joshi. All rights reserved.</div>
+          <div>© 2026 The House of Joshi. All rights reserved.</div>
           <div className="flex gap-5">
             <Link to="/terms" className="hover:text-primary">Terms & Conditions</Link>
             <Link to="/privacy" className="hover:text-primary">Privacy Policy</Link>
