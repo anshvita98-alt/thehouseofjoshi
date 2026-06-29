@@ -1,20 +1,10 @@
 import { useState, useCallback } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import {
-  Outlet,
-  Link,
-  createRootRouteWithContext,
-  useRouter,
-  HeadContent,
-  Scripts,
-} from "@tanstack/react-router";
+import { QueryClient } from "@tanstack/react-query";
+import { Outlet, Link, createRootRouteWithContext, useRouter } from "@tanstack/react-router";
 import { Navbar } from "@/components/sites/Navbar";
 import { Footer } from "@/components/sites/Footer";
-import { WalletProvider } from "@/components/sites/WalletProvider";
 import { StarField } from "@/components/sites/StarField";
 import { LoadingScreen } from "@/components/sites/LoadingScreen";
-
-import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
@@ -51,48 +41,12 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "House of Joshi — The Sovereign Web3 Ecosystem" },
-      { name: "description", content: "A kingdom built on blockchain innovation. Launch, trade, create and own across chains with the House of Joshi ecosystem." },
-      { name: "author", content: "House of Joshi" },
-      { property: "og:title", content: "House of Joshi — The Sovereign Web3 Ecosystem" },
-      { property: "og:description", content: "A kingdom built on blockchain innovation. Powering the next generation of digital ownership." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@thehouseofjoshi" },
-    ],
-    links: [
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "apple-touch-icon", href: "/favicon.png" },
-      { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
 
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en" className="dark">
-      <head><HeadContent /></head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
-
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
   const [loaded, setLoaded] = useState(false);
 
   const handleLoadComplete = useCallback(() => {
@@ -103,16 +57,12 @@ function RootComponent() {
     <>
       {!loaded && <LoadingScreen onComplete={handleLoadComplete} />}
       <div className={`transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}>
-        <QueryClientProvider client={queryClient}>
-          <WalletProvider>
-            <StarField />
-            <Navbar />
-            <main className="relative z-10">
-              <Outlet />
-            </main>
-            <Footer />
-          </WalletProvider>
-        </QueryClientProvider>
+        <StarField />
+        <Navbar />
+        <main className="relative z-10">
+          <Outlet />
+        </main>
+        <Footer />
       </div>
     </>
   );
