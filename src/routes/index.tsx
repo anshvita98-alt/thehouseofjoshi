@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import castle from "@/assets/castle-hero.jpg";
 import baseLogo from "@/assets/base-logo.png";
-import boneLogo from "/tokens/bone.png";
+import boneLogo from "/tokens/Bone.png";
 import treatLogo from "/tokens/Treat146b .png";
 import shibLogo from "/tokens/SHIB — SchismaticShib.png";
 import oscarLogo from "/tokens/oscar.jpeg";
