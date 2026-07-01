@@ -44,6 +44,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
+  head: () => ({
+    scripts: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-CP2M9VHTFQ",
+        async: true,
+      },
+      {
+        innerHTML: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-CP2M9VHTFQ');
+        `,
+      },
+    ],
+  }),
 });
 
 function RootComponent() {
