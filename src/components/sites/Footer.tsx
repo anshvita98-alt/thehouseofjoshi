@@ -33,7 +33,7 @@ export function Footer() {
         <FooterCol title="Community" links={[]} external={[
           ["X (Twitter)","https://x.com/thehouseofjoshi"],
           ["Discord","https://discord.com/invite/uH9zVeAwDu"],
-          ["Instagram","https://www.instagram.com/thehouseofjoshi_"],
+          ["Instagram","https://www.instagram.com/thehouseofjoshi"],
           ["Email","mailto:support@thehouseofjoshi.com"],
         ]} />
       </div>

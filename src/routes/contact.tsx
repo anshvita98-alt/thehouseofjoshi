@@ -46,9 +46,9 @@ function Contact() {
               <Icon><MessageCircle size={18} /></Icon>
               <div><div className="font-display text-lg">Discord</div><div className="text-sm text-muted-foreground">Join the community</div></div>
             </a>
-            <a href="https://www.instagram.com/thehouseofjoshi_" target="_blank" rel="noreferrer noopener" className="glass rounded-2xl p-6 flex items-center gap-4 hover:gold-glow transition">
+            <a href="https://www.instagram.com/thehouseofjoshi" target="_blank" rel="noreferrer noopener" className="glass rounded-2xl p-6 flex items-center gap-4 hover:gold-glow transition">
               <Icon><Instagram size={18} /></Icon>
-              <div><div className="font-display text-lg">Instagram</div><div className="text-sm text-muted-foreground">@thehouseofjoshi_</div></div>
+              <div><div className="font-display text-lg">Instagram</div><div className="text-sm text-muted-foreground">@thehouseofjoshi</div></div>
             </a>
           </div>
         </div>
