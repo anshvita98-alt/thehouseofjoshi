@@ -3,13 +3,18 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/joshi-logo.png";
 
-const NAV = [
+type NavItem =
+  | { to: string; label: string }
+  | { href: string; label: string };
+
+const NAV: NavItem[] = [
   { to: "/", label: "Home" },
   { to: "/ecosystem", label: "Ecosystem" },
   { to: "/swap", label: "Swap" },
   { to: "/nft-launchpad", label: "NFT Launchpad" },
   { to: "/legacy-vault", label: "Legacy Vault" },
   { to: "/dreamweaver", label: "Dreamweaver" },
+  { href: "https://kingdomwithin.thehouseofjoshi.com/", label: "Kingdom Within" },
   { to: "/staking", label: "Staking" },
   { to: "/treasury", label: "Treasury" },
 ];
@@ -49,6 +54,15 @@ export function Navbar() {
 
             <nav className="hidden lg:flex items-center gap-0.5 min-w-0">
               {NAV.map(n => {
+                if ("href" in n) {
+                  return (
+                    <a key={n.href} href={n.href}
+                       className="px-2.5 py-2 text-[11.5px] tracking-wide rounded-md whitespace-nowrap transition-all text-white/75 hover:text-primary">
+                      {n.label}
+                    </a>
+                  );
+                }
+
                 const active = path === n.to;
                 return (
                   <Link key={n.to} to={n.to}
@@ -75,10 +89,17 @@ export function Navbar() {
         <div className={`absolute right-0 top-0 h-full w-[88%] max-w-sm glass-strong p-6 pt-24 overflow-y-auto transition-transform duration-500 ${open ? "translate-x-0" : "translate-x-full"}`}>
           <nav className="flex flex-col gap-1">
             {NAV.map(n => (
-              <Link key={n.to} to={n.to} onClick={() => setOpen(false)}
-                    className={`px-3 py-3 text-sm rounded-md ${path===n.to ? "text-primary bg-primary/10" : "text-white/85 hover:text-primary hover:bg-primary/5"}`}>
-                {n.label}
-              </Link>
+              "href" in n ? (
+                <a key={n.href} href={n.href} onClick={() => setOpen(false)}
+                   className="px-3 py-3 text-sm rounded-md text-white/85 hover:text-primary hover:bg-primary/5">
+                  {n.label}
+                </a>
+              ) : (
+                <Link key={n.to} to={n.to} onClick={() => setOpen(false)}
+                      className={`px-3 py-3 text-sm rounded-md ${path===n.to ? "text-primary bg-primary/10" : "text-white/85 hover:text-primary hover:bg-primary/5"}`}>
+                  {n.label}
+                </Link>
+              )
             ))}
           </nav>
         </div>
