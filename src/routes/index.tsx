@@ -1,10 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import castle from "@/assets/castle-hero.jpg";
 import baseLogo from "@/assets/base-logo.png";
-import boneLogo from "/tokens/Bone.png";
-import treatLogo from "/tokens/Treat146b .png";
-import shibLogo from "/tokens/SHIB — SchismaticShib.png";
-import oscarLogo from "/tokens/oscar.jpeg";
 import { Section, GoldButton } from "@/components/sites/Section";
 
 import { ArrowRight, ShieldCheck, Layers, Sparkles, Crown, Vault, Palette, Store, Baby, Coins } from "lucide-react";
@@ -20,18 +16,17 @@ export const Route = createFileRoute("/")({
 });
 
 const CHAINS = [
+  { name: "Base", color: "#0052FF", logo: baseLogo },
   { name: "Ethereum", color: "#627EEA", logo: "https://cryptologos.cc/logos/ethereum-eth-logo.png" },
-  { name: "USDC", color: "#2775CA", logo: "https://cryptologos.cc/logos/usd-coin-usdc-logo.png" },
-  { name: "USDT", color: "#26A17B", logo: "https://cryptologos.cc/logos/tether-usdt-logo.png" },
-  { name: "Shibarium", color: "#FF7A1A", logo: "https://cryptologos.cc/logos/shiba-inu-shib-logo.png" },
-  { name: "Bone", color: "#F6A429", logo: boneLogo },
-  { name: "Treat146b", color: "#FF4D4D", logo: treatLogo },
+  { name: "Polygon", color: "#8247E5", logo: "https://cryptologos.cc/logos/polygon-matic-logo.png" },
+  { name: "BNB Chain", color: "#F3BA2F", logo: "https://cryptologos.cc/logos/bnb-bnb-logo.png" },
+  { name: "Arbitrum", color: "#28A0F0", logo: "https://cryptologos.cc/logos/arbitrum-arb-logo.png" },
+  { name: "Optimism", color: "#FF0420", logo: "https://cryptologos.cc/logos/optimism-ethereum-op-logo.png" },
+  { name: "Avalanche", color: "#E84142", logo: "https://cryptologos.cc/logos/avalanche-avax-logo.png" },
+  { name: "Unichain", color: "#F50DB4", logo: "https://icons.llamao.fi/icons/chains/rsz_unichain.jpg" },
+  { name: "Robinhood Chain", color: "#00C805", logo: "https://icons.llamao.fi/icons/chains/rsz_robinhood.jpg" },
   { name: "Cronos", color: "#002D74", logo: "https://cryptologos.cc/logos/cronos-cro-logo.png" },
   { name: "XRP", color: "#23292F", logo: "https://cryptologos.cc/logos/xrp-xrp-logo.png" },
-  { name: "SHIB — SchismaticShib", color: "#FF7A1A", logo: shibLogo },
-  { name: "Base", color: "#0052FF", logo: baseLogo },
-  { name: "Oscar", color: "#FF6B35", logo: oscarLogo },
-  { name: "BNB", color: "#F3BA2F", logo: "https://cryptologos.cc/logos/bnb-bnb-logo.png" },
 ];
 
 const ECOSYSTEM = [
