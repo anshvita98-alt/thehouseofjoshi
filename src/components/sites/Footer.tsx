@@ -27,6 +27,7 @@ export function Footer() {
           ["Ecosystem","/ecosystem"], ["Swap","/swap"], ["NFT Launchpad","/nft-launchpad"],
           ["Legacy Vault","/legacy-vault"], ["Dreamweaver","/dreamweaver"], ["Staking","/staking"], ["Treasury / DAO","/treasury"],
         ]} external={[
+          ["NFT Marketplace","https://nftmarketplace.thehouseofjoshi.com/"],
           ["Kingdom Within","https://kingdomwithin.thehouseofjoshi.com/"],
         ]} />
         <FooterCol title="Discover" links={[

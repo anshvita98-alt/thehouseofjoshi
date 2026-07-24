@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 const FAQS: { q: string; a: string }[] = [
-  { q: "What is House of Joshi?", a: "House of Joshi is a sovereign Web3 ecosystem on Base — combining Kingdom Within, a swap, NFT launchpad, Legacy Vault, Dreamweaver, staking and DAO treasury into one heritage-driven kingdom." },
+  { q: "What is House of Joshi?", a: "House of Joshi is a sovereign Web3 ecosystem on Base — combining Kingdom Within, a swap, NFT marketplace, NFT launchpad, Legacy Vault, Dreamweaver, staking and DAO treasury into one heritage-driven kingdom." },
   { q: "What is Kingdom Within?", a: "Kingdom Within is the Malkuta Protocol, a deterministic scripture-geometry instrument that translates sacred source text into reproducible harmonic frequency, color, and geometric form, with canonical artifacts minted on Base." },
   { q: "Which chain is the ecosystem built on?", a: "The House of Joshi is deployed on Base, an Ethereum L2 secured by Optimism rollup technology. All contracts and assets live on-chain." },
   { q: "Do I need to create an account?", a: "No. The ecosystem is fully non-custodial. You connect your own wallet (MetaMask, WalletConnect, etc.) and sign transactions yourself — there are no usernames or passwords." },

@@ -29,7 +29,7 @@ function About() {
           </div>
           <div className="glass rounded-2xl p-8">
             <h3 className="font-display text-2xl mb-3">Our Future</h3>
-            <p className="text-muted-foreground leading-relaxed">A multichain sovereign empire — DAO governance, generational vaults, NFT launchpads, creative tooling, educational realms, and Kingdom Within's deterministic scripture geometry — all designed to outlast generations.</p>
+            <p className="text-muted-foreground leading-relaxed">A multichain sovereign empire — DAO governance, generational vaults, NFT marketplace, NFT launchpads, creative tooling, educational realms, and Kingdom Within's deterministic scripture geometry — all designed to outlast generations.</p>
           </div>
         </div>
       </Section>

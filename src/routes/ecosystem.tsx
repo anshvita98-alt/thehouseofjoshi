@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section } from "@/components/sites/Section";
-import { Sparkles, Layers, Vault, Palette, Crown, Baby, Store, ArrowRight, Orbit } from "lucide-react";
+import { Sparkles, Layers, Vault, Palette, Crown, Baby, ArrowRight, Orbit, ShoppingBag, Shirt } from "lucide-react";
 
 export const Route = createFileRoute("/ecosystem")({
   head: () => ({ meta: [{ title: "Ecosystem — House of Joshi" }, { name: "description", content: "Every pillar of the House of Joshi sovereign Web3 ecosystem." }] }),
@@ -10,12 +10,13 @@ export const Route = createFileRoute("/ecosystem")({
 const ITEMS = [
   { icon: Sparkles, name: "NFT Launchpad", to: "/nft-launchpad", desc: "The official portal for new Joshi NFT collections, drops and creator launches." },
   { icon: Layers, name: "Swap", to: "/swap", desc: "Secure multichain token swapping across the official Joshi ecosystem." },
+  { icon: ShoppingBag, name: "NFT Marketplace", to: "https://nftmarketplace.thehouseofjoshi.com/", external: true, desc: "Trade and discover exclusive NFT collections across the Joshi ecosystem." },
   { icon: Orbit, name: "Kingdom Within", to: "https://kingdomwithin.thehouseofjoshi.com/", external: true, desc: "The Malkuta Protocol translates sacred text into verifiable frequency, color, and deterministic geometric form." },
   { icon: Vault, name: "Legacy Vault", to: "https://www.legacyvault.thehouseofjoshi.com/", external: true, desc: "A cinematic vault built for trust, permanence and future generations." },
   { icon: Palette, name: "Dreamweaver", to: "/dreamweaver", desc: "Mint the dreams as NFTs in an immersive creative atmosphere." },
   { icon: Crown, name: "Treasury / DAO", to: "/treasury", desc: "Sovereign governance, treasury operations and on-chain proposals." },
   { icon: Baby, name: "Kids", to: "/kids", desc: "A safe educational realm where the next generation learns Web3." },
-  { icon: Store, name: "Merch Store", to: "/merch", desc: "Cinematic luxury fashion for citizens of the sovereign kingdom." },
+  { icon: Shirt, name: "Merch Store", to: "/merch", desc: "Cinematic luxury fashion for citizens of the sovereign kingdom." },
 ];
 
 function Ecosystem() {

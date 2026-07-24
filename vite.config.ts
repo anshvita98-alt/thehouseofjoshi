@@ -19,6 +19,14 @@ export default defineConfig({
     outDir: "dist",
     assetsInlineLimit: 4096,
     chunkSizeWarningLimit: 1000,
+    watch: {
+      ignored: [
+        '**/node_modules/**',
+        '**/.git/**',
+        '**/Library/CloudStorage/**',
+        '**/.Trash/**',
+      ],
+    },
   },
   assetsInclude: ['**/*.mov'],
   resolve: {
