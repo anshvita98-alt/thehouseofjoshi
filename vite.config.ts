@@ -19,23 +19,6 @@ export default defineConfig({
     outDir: "dist",
     assetsInlineLimit: 4096,
     chunkSizeWarningLimit: 1000,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'router-vendor': ['@tanstack/react-router', '@tanstack/react-query'],
-          'ui-vendor': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-select'],
-        },
-      },
-    },
-    target: 'esnext',
   },
   assetsInclude: ['**/*.mov'],
   resolve: {
