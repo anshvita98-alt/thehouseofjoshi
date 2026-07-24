@@ -1,6 +1,6 @@
-import { Router, type IRouter } from "express";
+import { Router } from "express";
 
-const router: IRouter = Router();
+const router = Router();
 
 const ZEROX_BASE_URL = "https://api.0x.org";
 const ZEROX_API_KEY = process.env.ZEROX_API_KEY ?? "";

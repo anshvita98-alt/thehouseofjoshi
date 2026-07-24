@@ -1,6 +1,6 @@
-import { Router, type IRouter } from "express";
+import { Router } from "express";
 
-const router: IRouter = Router();
+const router = Router();
 
 const ETHERSCAN_KEY = process.env.ETHERSCAN_API_KEY ?? "";
 const HOUSE_WALLET = "0x6736d2eA9807297F0e56967361B9410854B86a5f";
