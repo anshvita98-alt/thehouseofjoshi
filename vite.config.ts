@@ -27,13 +27,6 @@ export default defineConfig({
     },
   },
   server: {
-    watch: {
-      ignored: [
-        '**/node_modules/**',
-        '**/.git/**',
-        '**/Library/CloudStorage/**',
-        '**/.Trash/**',
-      ],
-    },
+    watch: false,
   },
 });
