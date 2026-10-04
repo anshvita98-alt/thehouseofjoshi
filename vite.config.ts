@@ -27,6 +27,6 @@ export default defineConfig({
     },
   },
   server: {
-    watch: false,
+    watch: null,
   },
 });
