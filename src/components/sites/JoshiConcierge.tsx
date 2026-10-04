@@ -6,6 +6,47 @@ export default function JoshiConcierge() {
   const [showGreeting, setShowGreeting] = useState(true);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const sendingRef = useRef(false);
+  const [messages, setMessages] = useState<{ role: "user" | "model"; text: string }[]>([]);
+  const [draft, setDraft] = useState("");
+  const [isSending, setIsSending] = useState(false);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ block: "nearest" });
+  }, [messages, isSending, error, isOpen]);
+
+  async function sendMessage(event: React.FormEvent) {
+    event.preventDefault();
+    const text = draft.trim();
+    if (!text || sendingRef.current) return;
+    sendingRef.current = true;
+    const conversation = [...messages, { role: "user" as const, text }].slice(-19);
+    setMessages(conversation);
+    setDraft("");
+    setError("");
+    setIsSending(true);
+    try {
+      const response = await fetch("/api/gem", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: conversation }),
+        signal: AbortSignal.timeout(30000),
+      });
+      const data = await response.json();
+      if (!response.ok || typeof data.reply !== "string") throw new Error(data.error || "Gem couldn't reply. Please try again.");
+      setMessages([...conversation, { role: "model", text: data.reply }]);
+    } catch (failure) {
+      setMessages(messages);
+      setDraft(text);
+      setError(failure instanceof Error && failure.name === "Error" ? failure.message : "Gem couldn't connect. Please try again.");
+    } finally {
+      sendingRef.current = false;
+      setIsSending(false);
+      inputRef.current?.focus();
+    }
+  }
 
   useEffect(() => {
     if (!isOpen) return;
@@ -38,15 +79,26 @@ export default function JoshiConcierge() {
             <h3 id="joshi-concierge-title" className="text-sm font-bold uppercase tracking-wider text-amber-300">House of Joshi Concierge</h3>
             <button type="button" aria-label="Close concierge" onClick={() => { setIsOpen(false); triggerRef.current?.focus(); }} className="flex h-8 w-8 shrink-0 items-center justify-center rounded text-amber-400 hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-amber-300">✕</button>
           </div>
-          <span className="mt-2 text-[10px] uppercase tracking-widest text-amber-400">Gem Joshi · Preview</span>
-          <div className="min-h-0 flex-1 overflow-y-auto py-3 text-xs text-neutral-300">
+          <span className="mt-2 text-[10px] uppercase tracking-widest text-amber-400">Gem Joshi · AI Concierge</span>
+          <div role="log" aria-live="polite" aria-label="Conversation with Gem" className="min-h-0 flex-1 space-y-3 overflow-y-auto py-3 text-xs text-neutral-300">
             <p className="rounded-lg border border-amber-500/20 bg-amber-950/30 p-2.5 leading-relaxed text-amber-100">Greetings! How shall we expand or safeguard the ecosystem today?</p>
+            {messages.map((message, index) => (
+              <p key={index} className={`whitespace-pre-wrap break-words rounded-lg border p-2.5 leading-relaxed ${message.role === "user" ? "ml-6 border-neutral-700 bg-neutral-900 text-neutral-100" : "mr-3 border-amber-500/20 bg-amber-950/30 text-amber-100"}`}>
+                <span className="sr-only">{message.role === "user" ? "You: " : "Gem: "}</span>{message.text}
+              </p>
+            ))}
+            {isSending && <p className="text-amber-400">Gem is thinking…</p>}
+            <div ref={messagesEndRef} />
           </div>
-          <div className="pt-2">
+          <form onSubmit={sendMessage} className="pt-2">
+            {error && <p role="alert" className="mb-2 text-xs text-red-300">{error}</p>}
             <label htmlFor="gem-joshi-message" className="sr-only">Ask Gem Joshi</label>
-            <input ref={inputRef} id="gem-joshi-message" type="text" placeholder="Ask Gem Joshi..." aria-describedby="gem-joshi-preview" className="w-full rounded-lg border border-neutral-700 bg-neutral-900 px-3 py-2 text-xs text-amber-100 placeholder-neutral-500 focus:border-amber-400 focus:outline-none" />
-            <p id="gem-joshi-preview" className="mt-2 text-[10px] leading-relaxed text-neutral-400">Chat replies will be available once Gem is connected.</p>
-          </div>
+            <div className="flex gap-2">
+              <input ref={inputRef} id="gem-joshi-message" type="text" value={draft} onChange={event => setDraft(event.target.value)} readOnly={isSending} maxLength={4000} placeholder="Ask Gem Joshi..." aria-describedby="gem-joshi-info" className="min-w-0 flex-1 rounded-lg border border-neutral-700 bg-neutral-900 px-3 py-2 text-xs text-amber-100 placeholder-neutral-500 focus:border-amber-400 focus:outline-none" />
+              <button type="submit" disabled={isSending || !draft.trim()} className="rounded-lg border border-amber-400/40 px-3 text-xs text-amber-300 hover:bg-amber-950/40 disabled:opacity-40">Send</button>
+            </div>
+            <p id="gem-joshi-info" className="mt-2 text-[10px] leading-relaxed text-neutral-400">Powered by Gemini. Messages are sent to Google. Never share wallet secrets.</p>
+          </form>
         </section>
       )}
 
