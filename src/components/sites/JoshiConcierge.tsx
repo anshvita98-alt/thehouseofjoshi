@@ -5,6 +5,7 @@ export default function JoshiConcierge() {
   const [isOpen, setIsOpen] = useState(false);
   const [showGreeting, setShowGreeting] = useState(true);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const widgetRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const sendingRef = useRef(false);
@@ -12,6 +13,23 @@ export default function JoshiConcierge() {
   const [draft, setDraft] = useState("");
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    const viewport = window.visualViewport;
+    const updateViewport = () => {
+      widgetRef.current?.style.setProperty("--gem-viewport-height", `${viewport?.height ?? window.innerHeight}px`);
+      widgetRef.current?.style.setProperty("--gem-keyboard-offset", `${Math.max(0, window.innerHeight - (viewport?.height ?? window.innerHeight) - (viewport?.offsetTop ?? 0))}px`);
+    };
+    updateViewport();
+    viewport?.addEventListener("resize", updateViewport);
+    viewport?.addEventListener("scroll", updateViewport);
+    window.addEventListener("resize", updateViewport);
+    return () => {
+      viewport?.removeEventListener("resize", updateViewport);
+      viewport?.removeEventListener("scroll", updateViewport);
+      window.removeEventListener("resize", updateViewport);
+    };
+  }, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ block: "nearest" });
@@ -50,7 +68,7 @@ export default function JoshiConcierge() {
 
   useEffect(() => {
     if (!isOpen) return;
-    inputRef.current?.focus();
+    if (window.matchMedia("(pointer: fine)").matches) inputRef.current?.focus();
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsOpen(false);
@@ -62,7 +80,7 @@ export default function JoshiConcierge() {
   }, [isOpen]);
 
   return (
-    <div className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 z-50 flex flex-col items-end font-body sm:bottom-6 sm:right-6">
+    <div ref={widgetRef} className="gem-widget fixed z-[60] flex flex-col items-end font-body">
       {showGreeting && !isOpen && (
         <div className="relative mb-3 w-80 max-w-[calc(100vw-2rem)] rounded-2xl border border-amber-300/40 bg-black/90 p-4 pr-8 text-amber-100 shadow-[0_0_20px_rgba(217,119,6,0.2)] backdrop-blur-md motion-safe:animate-fade-up">
           <button type="button" onClick={() => setShowGreeting(false)} aria-label="Dismiss Gem Joshi greeting" className="absolute right-1 top-1 flex h-8 w-8 items-center justify-center text-xs text-amber-400 hover:text-amber-200 focus-visible:outline-2 focus-visible:outline-amber-300">✕</button>
@@ -74,13 +92,13 @@ export default function JoshiConcierge() {
       )}
 
       {isOpen && (
-        <section id="joshi-concierge" role="dialog" aria-labelledby="joshi-concierge-title" className="mb-3 flex h-96 max-h-[calc(100dvh-7rem)] w-80 max-w-[calc(100vw-2rem)] flex-col rounded-2xl border border-amber-400/40 bg-neutral-950/95 p-4 shadow-2xl backdrop-blur-xl">
+        <section id="joshi-concierge" role="dialog" aria-labelledby="joshi-concierge-title" className="gem-panel mb-3 flex flex-col rounded-2xl border border-amber-400/40 bg-neutral-950/95 p-4 shadow-2xl backdrop-blur-xl">
           <div className="flex items-center justify-between gap-2 border-b border-amber-500/20 pb-2">
             <h3 id="joshi-concierge-title" className="text-sm font-bold uppercase tracking-wider text-amber-300">House of Joshi Concierge</h3>
             <button type="button" aria-label="Close concierge" onClick={() => { setIsOpen(false); triggerRef.current?.focus(); }} className="flex h-8 w-8 shrink-0 items-center justify-center rounded text-amber-400 hover:text-amber-100 focus-visible:outline-2 focus-visible:outline-amber-300">✕</button>
           </div>
           <span className="mt-2 text-[10px] uppercase tracking-widest text-amber-400">Gem Joshi · AI Concierge</span>
-          <div role="log" aria-live="polite" aria-label="Conversation with Gem" className="min-h-0 flex-1 space-y-3 overflow-y-auto py-3 text-xs text-neutral-300">
+          <div role="log" aria-live="polite" aria-label="Conversation with Gem" className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain py-3 text-sm text-neutral-300">
             <p className="rounded-lg border border-amber-500/20 bg-amber-950/30 p-2.5 leading-relaxed text-amber-100">Greetings! How shall we expand or safeguard the ecosystem today?</p>
             {messages.map((message, index) => (
               <p key={index} className={`whitespace-pre-wrap break-words rounded-lg border p-2.5 leading-relaxed ${message.role === "user" ? "ml-6 border-neutral-700 bg-neutral-900 text-neutral-100" : "mr-3 border-amber-500/20 bg-amber-950/30 text-amber-100"}`}>
@@ -90,12 +108,12 @@ export default function JoshiConcierge() {
             {isSending && <p className="text-amber-400">Gem is thinking…</p>}
             <div ref={messagesEndRef} />
           </div>
-          <form onSubmit={sendMessage} className="pt-2">
+          <form onSubmit={sendMessage} className="shrink-0 pt-2">
             {error && <p role="alert" className="mb-2 text-xs text-red-300">{error}</p>}
             <label htmlFor="gem-joshi-message" className="sr-only">Ask Gem Joshi</label>
             <div className="flex gap-2">
-              <input ref={inputRef} id="gem-joshi-message" type="text" value={draft} onChange={event => setDraft(event.target.value)} readOnly={isSending} maxLength={4000} placeholder="Ask Gem Joshi..." aria-describedby="gem-joshi-info" className="min-w-0 flex-1 rounded-lg border border-neutral-700 bg-neutral-900 px-3 py-2 text-xs text-amber-100 placeholder-neutral-500 focus:border-amber-400 focus:outline-none" />
-              <button type="submit" disabled={isSending || !draft.trim()} className="rounded-lg border border-amber-400/40 px-3 text-xs text-amber-300 hover:bg-amber-950/40 disabled:opacity-40">Send</button>
+              <input ref={inputRef} id="gem-joshi-message" type="text" value={draft} onChange={event => setDraft(event.target.value)} readOnly={isSending} maxLength={4000} placeholder="Ask Gem Joshi..." aria-describedby="gem-joshi-info" className="min-h-11 min-w-0 flex-1 rounded-lg border border-neutral-700 bg-neutral-900 px-3 py-2 text-base text-amber-100 placeholder-neutral-500 focus:border-amber-400 focus:outline-none sm:text-sm" />
+              <button type="submit" disabled={isSending || !draft.trim()} className="min-h-11 rounded-lg border border-amber-400/40 px-3 text-sm text-amber-300 hover:bg-amber-950/40 disabled:opacity-40">Send</button>
             </div>
             <p id="gem-joshi-info" className="mt-2 text-[10px] leading-relaxed text-neutral-400">Powered by Gemini. Messages are sent to Google. Never share wallet secrets.</p>
           </form>
