@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import logo from "@/assets/joshi-logo.png";
 
 export default function JoshiConcierge() {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,10 +51,7 @@ export default function JoshiConcierge() {
       )}
 
       <button ref={triggerRef} type="button" onClick={() => { setIsOpen(!isOpen); setShowGreeting(false); }} aria-label={isOpen ? "Close Gem Joshi concierge" : "Open Gem Joshi concierge"} aria-expanded={isOpen} aria-controls={isOpen ? "joshi-concierge" : undefined} className="group relative flex h-16 w-16 items-center justify-center rounded-full border-2 border-amber-400/60 bg-gradient-to-b from-amber-950 via-neutral-900 to-black p-2 shadow-[0_0_25px_rgba(217,119,6,0.4)] transition-all duration-300 hover:scale-105 hover:border-amber-300 hover:shadow-[0_0_35px_rgba(251,191,36,0.6)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-300 motion-reduce:transition-none">
-        <span className="flex flex-col items-center justify-center" aria-hidden="true">
-          <span className="text-xl">👑</span>
-          <span className="text-[10px] font-bold tracking-widest text-amber-300 group-hover:text-amber-100">GJ</span>
-        </span>
+        <img src={logo} alt="" aria-hidden="true" width={44} height={44} className="h-11 w-11 object-contain" />
       </button>
     </div>
   );
