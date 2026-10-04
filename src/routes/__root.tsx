@@ -5,6 +5,7 @@ import { Navbar } from "@/components/sites/Navbar";
 import { Footer } from "@/components/sites/Footer";
 import { StarField } from "@/components/sites/StarField";
 import { LoadingScreen } from "@/components/sites/LoadingScreen";
+import JoshiConcierge from "@/components/sites/JoshiConcierge";
 
 function NotFoundComponent() {
   return (
@@ -80,6 +81,7 @@ function RootComponent() {
         </main>
         <Footer />
       </div>
+      {loaded && <JoshiConcierge />}
     </>
   );
 }
