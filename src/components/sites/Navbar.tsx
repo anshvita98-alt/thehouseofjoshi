@@ -8,6 +8,7 @@ const NAV = [
   { to: "/ecosystem", label: "Ecosystem" },
   { href: "https://kingdomwithin.thehouseofjoshi.com/", label: "Kingdom Within" },
   { href: "https://kaboom.thehouseofjoshi.com/", label: "Kaboom" },
+  { href: "https://joshiastrals.thehouseofjoshi.com/", label: "Joshi Astrals" },
   { to: "/swap", label: "Swap" },
   { href: "https://nftmarketplace.thehouseofjoshi.com/", label: "NFT Marketplace" },
   { to: "/nft-launchpad", label: "NFT Launchpad" },
