@@ -14,8 +14,6 @@ const NAV = [
   { to: "/nft-launchpad", label: "NFT Launchpad" },
   { to: "/legacy-vault", label: "Legacy Vault" },
   { to: "/dreamweaver", label: "Dreamweaver" },
-  { to: "/staking", label: "Staking" },
-  { to: "/treasury", label: "Treasury" },
 ];
 
 export function Navbar() {
