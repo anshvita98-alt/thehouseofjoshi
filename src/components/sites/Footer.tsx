@@ -29,6 +29,7 @@ export function Footer() {
         ]} external={[
           ["NFT Marketplace","https://nftmarketplace.thehouseofjoshi.com/"],
           ["Kingdom Within","https://kingdomwithin.thehouseofjoshi.com/"],
+          ["Kaboom","https://kaboom.thehouseofjoshi.com/"],
         ]} />
         <FooterCol title="Discover" links={[
           ["About","/about"], ["Whitepaper","/whitepaper"], ["Kids","/kids"], ["Merch Store","/merch"], ["FAQ","/faq"], ["Security","/security"], ["Contact","/contact"],
