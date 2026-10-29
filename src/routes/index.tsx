@@ -6,6 +6,7 @@ import { ArrowRight, ShieldCheck, Layers, Sparkles, Crown, Vault, Palette, Store
 
 export const Route = createFileRoute("/")({
   head: () => ({
+    links: [{ rel: "canonical", href: "https://thehouseofjoshi.com/" }],
     meta: [
       { title: "House of Joshi — The Sovereign Web3 Ecosystem" },
       { name: "description", content: "A kingdom built on blockchain innovation. Launch, trade, create and own across chains." },

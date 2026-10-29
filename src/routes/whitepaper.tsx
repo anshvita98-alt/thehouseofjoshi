@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { PageHero } from "@/components/sites/Section";
 
 export const Route = createFileRoute("/whitepaper")({
-  head: () => ({ meta: [{ title: "Whitepaper — House of Joshi" }, { name: "description", content: "The institutional whitepaper for the House of Joshi sovereign protocol." }] }),
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://thehouseofjoshi.com/whitepaper" }], meta: [{ title: "Whitepaper — House of Joshi" }, { name: "description", content: "The institutional whitepaper for the House of Joshi sovereign protocol." }] }),
   component: Whitepaper,
 });
 

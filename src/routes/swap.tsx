@@ -4,7 +4,8 @@ import { PageHero, Section, GoldButton } from "@/components/sites/Section";
 import { Layers, Shield, Zap } from "lucide-react";
 
 export const Route = createFileRoute("/swap")({
-  head: () => ({ meta: [{ title: "Swap — House of Joshi" }, { name: "description", content: "Access secure multichain token swapping through the House of Joshi ecosystem." }] }),
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://thehouseofjoshi.com/swap" }], meta: [{ title: "Swap — House of Joshi" }, { name: "description", content: "Access secure multichain token swapping through the House of Joshi ecosystem." }] }),
   component: Swap,
 });
 

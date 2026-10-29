@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, GoldButton } from "@/components/sites/Section";
 
 export const Route = createFileRoute("/nft-launchpad")({
-  head: () => ({ meta: [{ title: "NFT Launchpad — House of Joshi" }, { name: "description", content: "Access the official Joshi NFT Launchpad." }] }),
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://thehouseofjoshi.com/nft-launchpad" }], meta: [{ title: "NFT Launchpad — House of Joshi" }, { name: "description", content: "Access the official Joshi NFT Launchpad." }] }),
   component: Launchpad,
 });
 

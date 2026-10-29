@@ -1,0 +1,31 @@
+# The House of Joshi
+
+> The House of Joshi is a sovereign Web3 ecosystem focused on digital ownership, creative projects, multichain tools, and preserving digital heritage.
+
+## Key pages
+- [Home](https://thehouseofjoshi.com/): Overview of the House of Joshi ecosystem.
+- [About](https://thehouseofjoshi.com/about): The project story, principles, and team.
+- [Ecosystem](https://thehouseofjoshi.com/ecosystem): Products and projects across the ecosystem.
+- [Whitepaper](https://thehouseofjoshi.com/whitepaper): Protocol vision and ecosystem overview.
+- [FAQ](https://thehouseofjoshi.com/faq): Answers to common questions.
+- [Security](https://thehouseofjoshi.com/security): Security information and user guidance.
+
+## Products
+- [Swap](https://thehouseofjoshi.com/swap): Multichain swap information.
+- [NFT Launchpad](https://thehouseofjoshi.com/nft-launchpad): Official NFT launchpad information.
+- [Legacy Vault](https://thehouseofjoshi.com/legacy-vault): Digital heritage preservation.
+- [Dreamweaver](https://thehouseofjoshi.com/dreamweaver): Creative NFT project.
+- [Staking](https://thehouseofjoshi.com/staking): Staking experience information.
+- [Treasury / DAO](https://thehouseofjoshi.com/treasury): Governance and treasury plans.
+- [Merch Store](https://thehouseofjoshi.com/merch): House of Joshi merchandise.
+- [Kids](https://thehouseofjoshi.com/kids): Educational resources for younger audiences.
+- [Kingdom Within](https://kingdomwithin.thehouseofjoshi.com/): Scripture geometry and creative exploration.
+- [Kaboom](https://kaboom.thehouseofjoshi.com/): House of Joshi project.
+- [Joshi Astrals](https://joshiastrals.thehouseofjoshi.com/): House of Joshi project.
+- [NFT Marketplace](https://nftmarketplace.thehouseofjoshi.com/): Explore and trade ecosystem NFTs.
+
+## Contact and policies
+- [Contact](https://thehouseofjoshi.com/contact): Contact options and community links.
+- [Terms](https://thehouseofjoshi.com/terms): Terms and conditions.
+- [Privacy](https://thehouseofjoshi.com/privacy): Privacy policy.
+- Email: [support@thehouseofjoshi.com](mailto:support@thehouseofjoshi.com)

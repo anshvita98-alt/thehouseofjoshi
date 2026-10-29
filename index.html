@@ -15,6 +15,8 @@
     <title>House of Joshi — The Sovereign Web3 Ecosystem</title>
     <meta name="description" content="A kingdom built on blockchain innovation. Launch, trade, create and own across chains with the House of Joshi ecosystem." />
     <meta name="author" content="House of Joshi" />
+    <link rel="canonical" href="https://thehouseofjoshi.com/" />
+    <meta property="og:url" content="https://thehouseofjoshi.com/" />
     <meta property="og:title" content="House of Joshi — The Sovereign Web3 Ecosystem" />
     <meta property="og:description" content="A kingdom built on blockchain innovation. Powering the next generation of digital ownership." />
     <meta property="og:type" content="website" />
@@ -22,12 +24,107 @@
     <meta name="twitter:site" content="@thehouseofjoshi" />
     <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://thehouseofjoshi.com/#organization",
+            "name": "The House of Joshi",
+            "url": "https://thehouseofjoshi.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://thehouseofjoshi.com/joshi-logo.png"
+            },
+            "description": "A Web3 ecosystem for digital ownership, creative projects, multichain tools, and preserving digital heritage.",
+            "email": "support@thehouseofjoshi.com",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "support@thehouseofjoshi.com",
+              "availableLanguage": ["English"]
+            },
+            "sameAs": [
+              "https://x.com/thehouseofjoshi",
+              "https://www.instagram.com/thehouseofjoshi",
+              "https://discord.com/invite/uH9zVeAwDu"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://thehouseofjoshi.com/#website",
+            "url": "https://thehouseofjoshi.com/",
+            "name": "The House of Joshi",
+            "publisher": { "@id": "https://thehouseofjoshi.com/#organization" },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://thehouseofjoshi.com/#webpage",
+            "url": "https://thehouseofjoshi.com/",
+            "name": "House of Joshi — The Sovereign Web3 Ecosystem",
+            "description": "A kingdom built on blockchain innovation. Launch, trade, create and own across chains with the House of Joshi ecosystem.",
+            "isPartOf": { "@id": "https://thehouseofjoshi.com/#website" },
+            "about": { "@id": "https://thehouseofjoshi.com/#organization" },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://thehouseofjoshi.com/#ecosystem",
+            "name": "House of Joshi ecosystem projects",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Kingdom Within", "url": "https://kingdomwithin.thehouseofjoshi.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Kaboom", "url": "https://kaboom.thehouseofjoshi.com/" },
+              { "@type": "ListItem", "position": 3, "name": "Joshi Astrals", "url": "https://joshiastrals.thehouseofjoshi.com/" },
+              { "@type": "ListItem", "position": 4, "name": "NFT Marketplace", "url": "https://nftmarketplace.thehouseofjoshi.com/" }
+            ]
+          }
+        ]
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main aria-label="The House of Joshi homepage">
+        <header>
+          <p>The House of Joshi</p>
+          <nav aria-label="Primary">
+            <a href="/">Home</a> · <a href="/ecosystem">Ecosystem</a> ·
+            <a href="/about">About</a> · <a href="/contact">Contact</a> ·
+            <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a>
+          </nav>
+        </header>
+        <section>
+          <p>Welcome to</p>
+          <h1>The Sovereign Web3 Ecosystem</h1>
+          <p>A kingdom built on blockchain innovation. Launch, trade, create and own across chains. The House of Joshi brings together creative projects, multichain tools, NFT experiences, and digital heritage preservation.</p>
+          <p><a href="/ecosystem">Explore the ecosystem</a></p>
+        </section>
+        <section>
+          <h2>Explore House of Joshi projects</h2>
+          <ul>
+            <li><a href="/nft-launchpad">NFT Launchpad</a> — discover official collection launches.</li>
+            <li><a href="/swap">Swap</a> — learn about multichain token swapping.</li>
+            <li><a href="/legacy-vault">Legacy Vault</a> — explore digital heritage preservation.</li>
+            <li><a href="/dreamweaver">Dreamweaver</a> — explore a creative NFT experience.</li>
+            <li><a href="https://kingdomwithin.thehouseofjoshi.com/">Kingdom Within</a> — scripture geometry and creative exploration.</li>
+            <li><a href="https://kaboom.thehouseofjoshi.com/">Kaboom</a></li>
+            <li><a href="https://joshiastrals.thehouseofjoshi.com/">Joshi Astrals</a></li>
+            <li><a href="https://nftmarketplace.thehouseofjoshi.com/">NFT Marketplace</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>About and support</h2>
+          <p>Learn about the project, read the <a href="/whitepaper">whitepaper</a>, find answers in the <a href="/faq">FAQ</a>, and review <a href="/security">security information</a>.</p>
+          <p>Contact the House of Joshi at <a href="mailto:support@thehouseofjoshi.com">support@thehouseofjoshi.com</a>.</p>
+          <p><a href="/terms">Terms and conditions</a> · <a href="/privacy">Privacy policy</a></p>
+        </section>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

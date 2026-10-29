@@ -99,6 +99,7 @@ function SecurityPage() {
 
 export const Route = createFileRoute("/security")({
   head: () => ({
+    links: [{ rel: "canonical", href: "https://thehouseofjoshi.com/security" }],
     meta: [
       { title: "Security & Trust — House of Joshi" },
       { name: "description", content: "How the House of Joshi protects your legacy: audited smart contracts, self-custody, and the Sovereign Legacy Shield." },

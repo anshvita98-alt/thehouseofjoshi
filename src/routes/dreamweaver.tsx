@@ -3,7 +3,8 @@ import { PageHero, Section, GoldButton } from "@/components/sites/Section";
 import dream from "@/assets/dreamweaver.jpg";
 
 export const Route = createFileRoute("/dreamweaver")({
-  head: () => ({ meta: [{ title: "Dreamweaver — House of Joshi" }, { name: "description", content: "Mint the dreams as NFTs." }] }),
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://thehouseofjoshi.com/dreamweaver" }], meta: [{ title: "Dreamweaver — House of Joshi" }, { name: "description", content: "Mint the dreams as NFTs." }] }),
   component: Dreamweaver,
 });
 

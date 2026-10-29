@@ -3,7 +3,8 @@ import { PageHero, Section, GoldButton } from "@/components/sites/Section";
 import vault from "@/assets/vault.jpg";
 
 export const Route = createFileRoute("/legacy-vault")({
-  head: () => ({ meta: [{ title: "Legacy Vault — House of Joshi" }, { name: "description", content: "Preserve what matters forever." }] }),
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://thehouseofjoshi.com/legacy-vault" }], meta: [{ title: "Legacy Vault — House of Joshi" }, { name: "description", content: "Preserve what matters forever." }] }),
   component: LegacyVault,
 });
 

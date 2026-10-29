@@ -2,7 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { LegalDoc } from "@/components/sites/LegalDoc";
 
 export const Route = createFileRoute("/terms")({
-  head: () => ({ meta: [{ title: "Terms & Conditions — House of Joshi" }] }),
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://thehouseofjoshi.com/terms" }],
+    meta: [{ title: "Terms & Conditions — House of Joshi" }, { name: "description", content: "Review the terms for using House of Joshi products, interfaces, and ecosystem services." }] }),
   component: () => <LegalDoc
     eyebrow="LEGAL"
     title={<>Terms & <span className="gold-text">Conditions</span></>}

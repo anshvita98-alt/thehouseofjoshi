@@ -5,11 +5,95 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/((?!api/).*)",
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "accept",
+          "value": ".*text/markdown.*"
+        }
+      ],
+      "destination": "/api/home-markdown"
+    },
+    {
+      "source": "/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ecosystem",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/swap",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/nft-launchpad",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/legacy-vault",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dreamweaver",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/staking",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/treasury",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/merch",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/kids",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/whitepaper",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/security",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/",
       "destination": "/index.html"
     }
   ],
   "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </>; rel=\"alternate\"; type=\"text/markdown\""
+        }
+      ]
+    },
     {
       "source": "/((?!api/).*)",
       "headers": [

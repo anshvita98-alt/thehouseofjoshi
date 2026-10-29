@@ -3,7 +3,8 @@ import { PageHero, Section } from "@/components/sites/Section";
 import { Sparkles, Layers, Vault, Palette, Crown, Baby, ArrowRight, Orbit, ShoppingBag, Shirt } from "lucide-react";
 
 export const Route = createFileRoute("/ecosystem")({
-  head: () => ({ meta: [{ title: "Ecosystem — House of Joshi" }, { name: "description", content: "Every pillar of the House of Joshi sovereign Web3 ecosystem." }] }),
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://thehouseofjoshi.com/ecosystem" }], meta: [{ title: "Ecosystem — House of Joshi" }, { name: "description", content: "Every pillar of the House of Joshi sovereign Web3 ecosystem." }] }),
   component: Ecosystem,
 });
 

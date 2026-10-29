@@ -4,7 +4,8 @@ import { PageHero, Section } from "@/components/sites/Section";
 import { Mail, Twitter, MessageCircle, Instagram } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({ meta: [{ title: "Contact — House of Joshi" }, { name: "description", content: "Reach the House of Joshi community and team." }] }),
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://thehouseofjoshi.com/contact" }], meta: [{ title: "Contact — House of Joshi" }, { name: "description", content: "Reach the House of Joshi community and team." }] }),
   component: Contact,
 });
 

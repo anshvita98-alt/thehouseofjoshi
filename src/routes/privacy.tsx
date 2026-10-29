@@ -2,7 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { LegalDoc } from "@/components/sites/LegalDoc";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => ({ meta: [{ title: "Privacy Policy — House of Joshi" }] }),
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://thehouseofjoshi.com/privacy" }],
+    meta: [{ title: "Privacy Policy — House of Joshi" }, { name: "description", content: "Read how the House of Joshi handles public blockchain data, wallet interactions, and privacy." }] }),
   component: () => <LegalDoc
     eyebrow="PRIVACY"
     title={<>Privacy <span className="gold-text">Policy</span></>}

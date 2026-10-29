@@ -3,7 +3,8 @@ import { PageHero, Section } from "@/components/sites/Section";
 import { Crown, Sparkles, Shield, Infinity as Inf, Heart } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({ meta: [{ title: "About — House of Joshi" }, { name: "description", content: "A new paradigm in legacy, art and blockchain sovereignty." }] }),
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://thehouseofjoshi.com/about" }], meta: [{ title: "About — House of Joshi" }, { name: "description", content: "A new paradigm in legacy, art and blockchain sovereignty." }] }),
   component: About,
 });
 

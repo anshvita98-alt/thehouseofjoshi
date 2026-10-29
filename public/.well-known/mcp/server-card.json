@@ -1,0 +1,44 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-06-18",
+  "serverInfo": {
+    "name": "house-of-joshi-public-site",
+    "title": "The House of Joshi Public Site",
+    "version": "1.0.0"
+  },
+  "description": "Read-only discovery tools for public House of Joshi website content and pages.",
+  "iconUrl": "https://thehouseofjoshi.com/joshi-logo.png",
+  "documentationUrl": "https://thehouseofjoshi.com/llms.txt",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://thehouseofjoshi.com/api/mcp"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    }
+  },
+  "authentication": {
+    "required": false,
+    "schemes": []
+  },
+  "instructions": "This server exposes read-only discovery of public pages. It does not access wallets, submit transactions, or change site data.",
+  "tools": [
+    {
+      "name": "search_public_pages",
+      "title": "Search public pages",
+      "description": "Find matching public pages on the House of Joshi website.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Words to find in page titles, summaries, or paths."
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}

@@ -51,6 +51,7 @@ function FaqPage() {
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
+    links: [{ rel: "canonical", href: "https://thehouseofjoshi.com/faq" }],
     meta: [
       { title: "FAQ — House of Joshi" },
       { name: "description", content: "Answers to common questions about the House of Joshi sovereign Web3 ecosystem on Base." },
