@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm run build && node scripts/prepare-vercel-output.mjs",
   "outputDirectory": "dist",
   "installCommand": "npm ci --no-audit --no-fund",
   "framework": "vite",
@@ -17,71 +17,71 @@
     },
     {
       "source": "/about",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/ecosystem",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/swap",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/nft-launchpad",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/legacy-vault",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/dreamweaver",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/staking",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/treasury",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/merch",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/kids",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/whitepaper",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/faq",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/security",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/contact",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/terms",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/privacy",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     },
     {
       "source": "/",
-      "destination": "/index.html"
+      "destination": "/site-shell.html"
     }
   ],
   "headers": [
@@ -104,7 +104,7 @@
       ]
     },
     {
-      "source": "/index.html",
+      "source": "/site-shell.html",
       "headers": [
         {
           "key": "Cache-Control",
